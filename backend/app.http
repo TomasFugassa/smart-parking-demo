@@ -1,0 +1,44 @@
+GET http://localhost:3000/parkings
+
+###
+GET http://localhost:3000/sensors
+
+###
+PUT http://localhost:3000/parkings/1
+Content-Type: application/json
+
+{
+  "name": "Parking A",
+  "location": "124 Main St",
+  "totalSpaces": 2,
+  "latitude": -34.902877,
+  "longitude": -56.187805,
+  "layout": {
+    "1": {
+      "spaceId": "1",
+      "isOccupied": false
+    },
+    "2": {
+      "spaceId": "2",
+      "isOccupied": false
+    }
+  }
+}
+
+###
+PUT http://localhost:3000/sensors/1
+Content-Type: application/json
+
+{
+  "spaceId": "1",
+  "parkingId": "1",
+  "isOccupied": false,
+  "distance": 12,
+  "rssi": -70
+}
+
+###
+DELETE http://localhost:3000/parkings/1
+
+###
+DELETE http://localhost:3000/sensors/1/1

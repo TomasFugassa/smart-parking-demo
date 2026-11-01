@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0f172a">
+    <title>Parking Management</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="hero">
+            <div class="hero-copy">
+                <span class="live-pill">Live Admin dashboard</span>
+                <h1>Parking Management System</h1>
+                <p class="subtitle">Professional monitoring for parking lots and sensors in real time.</p>
+            </div>
+
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span class="hero-stat-value" id="summaryParkings">0</span>
+                    <span class="hero-stat-label">Parkings</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-value" id="summarySpaces">0</span>
+                    <span class="hero-stat-label">Total spaces</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-value" id="summaryOccupied">0</span>
+                    <span class="hero-stat-label">Occupied</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="dashboard">
+            <section class="panel parkings-list" id="parkingsList">
+                <div class="section-head">
+                    <div>
+                        <h2>Available Parkings</h2>
+                        <p class="section-note">Choose a parking to inspect its spaces and live status.</p>
+                    </div>
+                    <span class="section-chip">Updated live</span>
+                </div>
+                <div class="parking-grid" id="parkingGrid"></div>
+                <div class="empty-state" id="parkingEmpty" hidden>
+                    <h3>No parkings yet</h3>
+                    <p>Create your first parking to start monitoring it here.</p>
+                </div>
+            </section>
+
+            <section class="panel parking-detail" id="parkingDetail" style="display: none;">
+                <div class="detail-header">
+                    <button class="back-btn" onclick="backToParkings()">← Back</button>
+                    <div>
+                        <h2 id="parkingName"></h2>
+                        <p id="parkingLocation" class="location"></p>
+                    </div>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-card">
+                        <span class="stat-label">Total Spaces</span>
+                        <span class="stat-value" id="totalSpaces">0</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">Occupied</span>
+                        <span class="stat-value occupied" id="occupiedSpaces">0</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">Available</span>
+                        <span class="stat-value available" id="availableSpaces">0</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">Occupancy Rate</span>
+                        <span class="stat-value" id="occupancyRate">0%</span>
+                    </div>
+                </div>
+
+                <div class="spaces-container">
+                    <h3>Parking Spaces</h3>
+                    <div class="spaces-grid" id="spacesGrid">
+                        <!-- Spaces will be loaded here -->
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

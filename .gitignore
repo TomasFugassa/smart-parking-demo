@@ -1,0 +1,15 @@
+node_modules/
+npm-debug.log*
+
+.env
+.env.*
+
+.vscode/
+
+.expo/
+
+android/.gradle/
+android/local.properties
+
+.DS_Store
+.thumbs.db
